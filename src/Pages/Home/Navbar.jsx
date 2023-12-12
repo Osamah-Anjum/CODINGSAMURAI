@@ -1,16 +1,16 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 
 function Navbar() {
     const [navActive, setNavActive] = useState(false);
-    const toogleNav = () => {
+
+    const toggleNav = () => {
         setNavActive(!navActive);
-    }
+    };
 
     const closeMenu = () => {
-        setNavActive = (false);
-    }
+        setNavActive(false);
+    };
 
     useEffect(() => {
         const handleResize = () => {
@@ -18,11 +18,12 @@ function Navbar() {
                 closeMenu();
             }
         };
+
         window.addEventListener("resize", handleResize);
 
         return () => {
             window.removeEventListener("resize", handleResize);
-        }
+        };
     }, []);
 
     useEffect(() => {
@@ -36,8 +37,10 @@ function Navbar() {
             <div>
                 <img src="./img/Logo .svg" alt="Portfolio" />
             </div>
-            <a className={`nav__hamburger ${navActive ? "active" : ""}`} onClick={toogleNav}>
-
+            <a
+                className={`nav__hamburger ${navActive ? "active" : ""}`}
+                onClick={toggleNav}
+            >
                 <span className="nav__hamburger__line"></span>
                 <span className="nav__hamburger__line"></span>
                 <span className="nav__hamburger__line"></span>
@@ -45,7 +48,8 @@ function Navbar() {
             <div className={`navbar--items ${navActive ? "active" : ""}`}>
                 <ul>
                     <li>
-                        <Link onClick={closeMenu}
+                        <Link
+                            onClick={closeMenu}
                             activeClass="navbar--active-content"
                             spy={true}
                             smooth={true}
@@ -53,21 +57,27 @@ function Navbar() {
                             duration={500}
                             to="heroSection"
                             className="navbar--content"
-                        >Home</Link>
+                        >
+                            Home
+                        </Link>
                     </li>
                     <li>
-                        <Link onClick={closeMenu}
+                        <Link
+                            onClick={closeMenu}
                             activeClass="navbar--active-content"
                             spy={true}
                             smooth={true}
                             offset={-70}
                             duration={500}
-                            to="myPortfolio"
+                            to="MyPortfolio"
                             className="navbar--content"
-                        >Portfolio</Link>
+                        >
+                            Portfolio
+                        </Link>
                     </li>
                     <li>
-                        <Link onClick={closeMenu}
+                        <Link
+                            onClick={closeMenu}
                             activeClass="navbar--active-content"
                             spy={true}
                             smooth={true}
@@ -75,33 +85,40 @@ function Navbar() {
                             duration={500}
                             to="AboutMe"
                             className="navbar--content"
-                        >About Me</Link>
+                        >
+                            About Me
+                        </Link>
                     </li>
                     <li>
-                        <Link onClick={closeMenu}
+                        <Link
+                            onClick={closeMenu}
                             activeClass="navbar--active-content"
                             spy={true}
                             smooth={true}
                             offset={-70}
                             duration={500}
-                            to="Testimonials"
+                            to="testimonial"
                             className="navbar--content"
-                        >Testimonials</Link>
+                        >
+                            Testimonials
+                        </Link>
                     </li>
                 </ul>
             </div>
-            <Link onClick={closeMenu}
+            <Link
+                onClick={closeMenu}
                 activeClass="navbar--active-content"
                 spy={true}
                 smooth={true}
                 offset={-70}
                 duration={500}
                 to="Contact"
-                className="btn btn-outline-primary">
+                className="btn btn-outline-primary"
+            >
                 Contact Me
             </Link>
         </nav>
-    )
+    );
 }
 
 export default Navbar;
