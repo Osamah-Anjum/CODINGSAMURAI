@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/codingsamurai/static/css/main.44576b1a.css",
+    "main.js": "/codingsamurai/static/js/main.34783b89.js",
+    "index.html": "/codingsamurai/index.html",
+    "main.44576b1a.css.map": "/codingsamurai/static/css/main.44576b1a.css.map",
+    "main.34783b89.js.map": "/codingsamurai/static/js/main.34783b89.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.44576b1a.css",
+    "static/js/main.34783b89.js"
+  ]
+}
